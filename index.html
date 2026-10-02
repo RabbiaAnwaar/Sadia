@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>For Sadia ♡</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: #090713;
+        color: #fff5f8;
+        font-family: Manrope, sans-serif;
+        overflow-x: hidden;
+      }
+      body:before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.07;
+        z-index: 20;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      #stars {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 0, #32112f 0, #090713 48%);
+      }
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: #fff;
+        border-radius: 50%;
+        opacity: 0.5;
+        animation: twinkle 3s infinite;
+      }
+      @keyframes twinkle {
+        50% {
+          opacity: 0.08;
+          transform: scale(0.5);
+        }
+      }
+      section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 20px;
+      }
+      .container {
+        width: min(1050px, 100%);
+        margin: auto;
+      }
+      .hero {
+        text-align: center;
+        position: relative;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        font-size: 0.72rem;
+        color: #ff8fbd;
+        font-weight: 700;
+      }
+      .hero h1,
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+      }
+      .hero h1 {
+        font-size: clamp(4.5rem, 13vw, 9.5rem);
+        line-height: 0.84;
+        margin: 25px 0;
+        background: linear-gradient(135deg, #fff, #ffc6dc 45%, #ff68a6);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .sub {
+        max-width: 650px;
+        margin: auto;
+        color: #cbbbc6;
+        line-height: 1.8;
+      }
+      .delay {
+        display: inline-block;
+        margin-top: 28px;
+        padding: 12px 18px;
+        border: 1px solid #ffffff20;
+        border-radius: 999px;
+        background: #ffffff09;
+        color: #ffe1eb;
+      }
+      .scroll {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        color: #9d8c98;
+      }
+      .scroll:after {
+        content: "";
+        display: block;
+        height: 42px;
+        width: 1px;
+        background: linear-gradient(#ff8fbd, transparent);
+        margin: 10px auto;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: 1s ease;
+      }
+      .show {
+        opacity: 1;
+        transform: none;
+      }
+      .two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        align-items: center;
+      }
+      .big6 {
+        font: 18rem/0.7 "DM Serif Display";
+        text-align: center;
+        color: transparent;
+        -webkit-text-stroke: 1px #ff8fbd99;
+        text-shadow: 0 0 80px #ff5f9e30;
+      }
+      h2 {
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 0.95;
+        margin: 15px 0 25px;
+      }
+      p {
+        line-height: 1.85;
+        color: #cbbbc6;
+      }
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 35px;
+      }
+      .mini,
+      .card {
+        background: linear-gradient(145deg, #ffffff12, #ffffff08);
+        border: 1px solid #ffffff18;
+        backdrop-filter: blur(18px);
+        box-shadow: 0 30px 100px #0005;
+      }
+      .mini {
+        padding: 25px;
+        border-radius: 22px;
+      }
+      .mini b {
+        display: block;
+        color: #ff8fbd;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .letter {
+        max-width: 760px;
+      }
+      .card {
+        border-radius: 30px;
+        padding: clamp(30px, 6vw, 65px);
+      }
+      .quote {
+        font: clamp(1.7rem, 3vw, 2.5rem)/1.35 "DM Serif Display";
+        color: #ffe9f1;
+      }
+      .letter p {
+        color: #eadbe2;
+        font-size: 1.03rem;
+        margin: 17px 0;
+      }
+      .signature {
+        font: 2rem "DM Serif Display";
+        color: #ffabc9;
+        margin-top: 30px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 999px;
+        padding: 15px 23px;
+        margin-top: 30px;
+        background: linear-gradient(135deg, #ff8fbd, #ff4f96);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 12px 35px #ff4f963d;
+        transition: 0.25s;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 18px 45px #ff4f9666;
+      }
+      .final {
+        text-align: center;
+      }
+      .final h2 {
+        font-size: clamp(3.5rem, 8vw, 7rem);
+      }
+      .moment {
+        font: italic 1.4rem "DM Serif Display";
+        color: #ffabc9;
+      }
+      #surprise {
+        display: none;
+        max-width: 650px;
+        margin: 30px auto 0;
+      }
+      #surprise.open {
+        display: block;
+        animation: pop 0.7s ease;
+      }
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .float {
+        position: fixed;
+        bottom: -40px;
+        z-index: 2;
+        pointer-events: none;
+        color: #ff8fbd;
+        animation: rise linear forwards;
+      }
+      @keyframes rise {
+        to {
+          transform: translateY(-115vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+      .confetti {
+        position: fixed;
+        z-index: 99;
+        top: -20px;
+        width: 8px;
+        height: 14px;
+        background: #ff8fbd;
+        animation: fall 3.2s linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(720deg);
+        }
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        color: #756774;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+      }
+      @media (max-width: 750px) {
+        .two,
+        .timeline {
+          grid-template-columns: 1fr;
+        }
+        .big6 {
+          font-size: 11rem;
+        }
+        section {
+          padding: 65px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stars"></div>
+    <main>
+      <section class="hero">
+        <div class="container reveal">
+          <div class="eyebrow">a little something for Sadia</div>
+          <h1>Happy<br />Birthday.</h1>
+          <p class="sub">I was supposed to send this at exactly 12:00 AM.</p>
+          <div class="delay">
+            It is currently 2:32 PM. &nbsp;•&nbsp; Please blame the website. ♡
+          </div>
+        </div>
+        <div class="scroll">SCROLL FOR YOUR SURPRISE</div>
+      </section>
+      <section>
+        <div class="container two">
+          <div class="reveal">
+            <div class="eyebrow">six whole years</div>
+            <h2>That's a<br />lot of memories.</h2>
+            <p>
+              Six years of knowing you. Six years of random conversations,
+              stupid jokes, little updates, disappearing and reappearing, and
+              somehow still being here. An online friendship, yes — but never a
+              friendship that felt any less real.
+            </p>
+          </div>
+          <div class="big6 reveal">6</div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="reveal">
+            <div class="eyebrow">the friendship timeline</div>
+            <h2>Somehow, we made it here.</h2>
+          </div>
+          <div class="timeline">
+            <div class="mini reveal">
+              <b>Year 01</b>
+              <p>
+                Two strangers on the internet, completely unaware this would
+                become a six-year friendship.
+              </p>
+            </div>
+            <div class="mini reveal">
+              <b>Year 03</b>
+              <p>
+                At some point, “online friend” stopped feeling like the whole
+                explanation.
+              </p>
+            </div>
+            <div class="mini reveal">
+              <b>Year 06</b>
+              <p>
+                And here we are. Still friends. Still talking. Still collecting
+                memories.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container letter reveal">
+          <div class="eyebrow">open this slowly</div>
+          <h2>A letter for Sadia.</h2>
+          <div class="card">
+            <div class="quote">
+              “Some people enter your life quietly and somehow become part of
+              it.”
+            </div>
+            <p>Sadia,</p>
+            <p>Happy birthday. ♡</p>
+            <p>
+              I genuinely can't believe we've been friends for six whole years.
+              When we first became friends, I obviously had no idea that some
+              random person I met online would still be here all these years
+              later.
+            </p>
+            <p>
+              We've grown, changed, gone through different phases, and probably
+              accumulated enough inside jokes and random conversations to fill
+              an entire book. And honestly, I'm really glad that book exists.
+            </p>
+            <p>
+              I hope this year gives you the kind of happiness that doesn't need
+              a reason. I hope you get little moments that make you stop and
+              think, “wow, life is actually pretty nice.” I hope you get closer
+              to the things you want, laugh until your stomach hurts, and have
+              more days that feel genuinely yours.
+            </p>
+            <p>
+              Thank you for being my friend for six years. That's not a tiny
+              amount of time. And even though we met through a screen, the
+              memories are real, the laughs were real, and the friendship is
+              real.
+            </p>
+            <p>
+              Also, yes, I know I was supposed to wish you at midnight.<br /><br /><strong
+                >But technically, I was late because I was making you an entire
+                website.</strong
+              >
+              So... I think I deserve at least partial credit. 😭
+            </p>
+            <div class="signature">Happy birthday, Sadia. ♡</div>
+          </div>
+        </div>
+      </section>
+      <section class="final">
+        <div class="container reveal">
+          <div class="eyebrow">one last thing</div>
+          <h2>Make a wish,<br />Sadia.</h2>
+          <div class="moment">
+            six years down. here's to whatever comes next.
+          </div>
+          <button class="btn" id="wishBtn">
+            ✦ Open your birthday surprise
+          </button>
+          <div id="surprise" class="card">
+            <div class="quote">
+              “I hope future-you looks back at this year and thinks: I had no
+              idea how many good things were waiting for me.”
+            </div>
+            <p style="margin-top: 18px">
+              Now go enjoy your birthday. And yes, I am officially counting this
+              as my midnight wish. 😭♡
+            </p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        made with way too much effort for one very important friend ♡
+      </footer>
+    </main>
+    <script>
+      for (let i = 0; i < 100; i++) {
+        let s = document.createElement("span");
+        s.className = "star";
+        s.style.left = Math.random() * 100 + "%";
+        s.style.top = Math.random() * 100 + "%";
+        s.style.animationDelay = Math.random() * 3 + "s";
+        document.getElementById("stars").appendChild(s);
+      }
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => e.isIntersecting && e.target.classList.add("show")),
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach((e) => io.observe(e));
+      function floatHeart() {
+        let x = document.createElement("div");
+        x.className = "float";
+        x.textContent = ["♡", "✦", "♥", "✧"][Math.floor(Math.random() * 4)];
+        x.style.left = Math.random() * 100 + "vw";
+        x.style.fontSize = 14 + Math.random() * 25 + "px";
+        x.style.animationDuration = 7 + Math.random() * 7 + "s";
+        document.body.appendChild(x);
+        setTimeout(() => x.remove(), 15000);
+      }
+      setInterval(floatHeart, 900);
+      document.getElementById("wishBtn").onclick = () => {
+        document.getElementById("surprise").classList.add("open");
+        for (let i = 0; i < 100; i++) {
+          let c = document.createElement("div");
+          c.className = "confetti";
+          c.style.left = Math.random() * 100 + "vw";
+          c.style.animationDelay = Math.random() * 0.8 + "s";
+          document.body.appendChild(c);
+          setTimeout(() => c.remove(), 4200);
+        }
+        document.getElementById("wishBtn").textContent =
+          "♡ Wish sent into the universe";
+      };
+    </script>
+  </body>
+</html>
